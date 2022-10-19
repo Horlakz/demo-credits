@@ -2,10 +2,15 @@ const supertest = require("supertest");
 const createServer = require("../utils/server");
 const userService = require("../services/user_service");
 const { userInput, userPayload } = require("../fixtures/user.fixtures");
+const { truncateDatabase } = require("../utils/db");
 
 const app = createServer();
 
 describe("User", () => {
+  AfterAll(async () => {
+    await truncateDatabase();
+  });
+
   describe("user registeration", () => {
     it("should return the user payload with status code 201", async () => {
       const createUserServiceMock = jest
