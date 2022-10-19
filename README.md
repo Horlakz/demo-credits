@@ -19,7 +19,7 @@ Default headers:
 
 # user endpoints
 
-- `GET /api/v1/user/register` - Register a user
+- `POST /api/v1/user/register` - Register a user
 
 Sample Payload:
 All fields are required for registering a user.
